@@ -8,4 +8,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
 
-RewriteRule ^([^/]*)/?([^/]*)?/? /index.php?controller=$1&method=$2
+
+RewriteRule ^([^/]*)/?([^/]*)?/? /mvc-master/index.php?controller=$1&method=$2
+
