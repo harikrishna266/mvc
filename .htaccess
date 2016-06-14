@@ -1,0 +1,11 @@
+RewriteEngine on 
+Options -Indexes
+
+
+
+#if this folder or file is not present then execute below
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+
+RewriteRule ^([^/]*)/?([^/]*)?/? /index.php?controller=$1&method=$2
