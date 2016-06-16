@@ -1,20 +1,22 @@
 <?php
-	require_once('./db/db.php');
+	
  	class loginController extends db {
  		
+
  		function __construct()
  		{
- 			print "Login page\n";
+ 			parent::__construct();
+
  		}
 
  		function view() {
 	 			require_once('./views/login/login.php') ; 
-	 			$db1=new db();
-	 			$db1->store();
-	   		}
-
+	 			
+	   	}
+   	 	function submit(){
+	   		$postData = getPostData();
+	   		$loginArray = array('admin_username'=>$postData["admname"],'admin_pass'=>$postData["admpass"]);
+	   		$this->selectByArgument('adminus',$loginArray);
+   	 	}
  	}
-
-
-
 ?>
