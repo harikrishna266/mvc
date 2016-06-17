@@ -1,6 +1,7 @@
 <title>Administrator Login</title>
 <div align="center">
-	<form method="post" action="../login/submit">
+	<form method="post" action="../login/view">
+		<p><?php  echo $error; ?></p>
 		<table border="2" bgcolor="#00CC99">
 			<tbody>
 			  	<tr>

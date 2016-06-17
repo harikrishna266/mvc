@@ -1,4 +1,4 @@
-<?php
+<?php 
 class db{
 
 		public $db;
@@ -28,15 +28,26 @@ class db{
 			$queryString = substr($queryString,0,-4);
 			$stmt = $this->db->prepare($querytable." ".$queryString);
 			$stmt->execute($data);
-			$data =$stmt->fetchAll(PDO::FETCH_ASSOC);
-			// print_r($data);
-			if(!$data){
-				echo "<script>alert('Wrong Login Details, Try Again!')</script>";
-			}else{
-				echo "<script>alert('Success!')</script>";
-			}
+			$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			return $data;
 		}
 
+		function insert($tablename,$arguments) {
+			$queryString1 = "";
+			$queryString2 = "";
+			$querytable1 = "Insert into $tablename ";
+			$querytable2 = "values";
+			$data = [];
+			foreach ($arguments as $key=>$value) {
+				$queryString1 .= "`" .$key. "`,";
+				$queryString2 .= "?,";
+				array_push($data,$value);
+			}
+			$queryString1 = substr($queryString1,0,-1);
+			$queryString2 = substr($queryString2,0,-1);
+			$stmt = $this->db->prepare($querytable1."(".$queryString1.")".$querytable2."(".$queryString2.")");
+			$stmt->execute($data);
+		}	
 
 	}
 
