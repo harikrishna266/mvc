@@ -8,10 +8,17 @@ class adminController extends db {
 	}
 
 	function view() {
-		if($_POST){
-		$data=$this->submit();
-		}
-		require_once('./views/adminpage/adminpage.php');
+		$err='';
+		 if($_POST){
+			$data=$this->submit(); 
+		 		if(!$data){
+					$err = "Success";
+		    	} else {
+					$err = "Error";
+				}
+			}
+			$val = $this->value();
+			require('./views/adminpage/adminpage.php');
 	}
 
 	function submit() {
@@ -19,6 +26,13 @@ class adminController extends db {
 	   	$userArray = array('username'=>$postData["usename"],'password'=>$postData["usepass"]);
 	   	$data=$this->insert('usertable',$userArray);		
 		return $data;
+	}
+
+	function value() {
+		$val=$this->select('usertable');
+		return $val;
+		//print_r($val);
+
 	}
 }
 ?>

@@ -42,5 +42,23 @@
 		<script type="text/javascript" src="../scripts/jquery-ui-sliderAccess.js"></script>
 		<script type="text/javascript" src="../scripts/script.js"></script>
 	</form>
+<br><br>
+	<table align="center" border="2" bgcolor="#00CC99">
+			<tbody>
+			  	<tr>
+					<td align="center">
+			  			<p>START DATE & TIME </p>
+			  		</td>
+			  		<td align="center">  
+						<p>END DATE & TIME
+					</td>
+			  	</tr>
+				<tr>
+					<td align="center">  
+					
+					</td>
+				</tr>
+			</tbody>
+		</table> 
 	</body> 
 </html>

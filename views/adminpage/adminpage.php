@@ -6,6 +6,7 @@
 <body>
 <p align="center">Welcome to admin page!!</p>
 <form action="../admin/view" method="post">
+<p align="center"><?php echo $err;?></p>
 <div align="center">
 <table border="2" bgcolor="#00CC99">
 			<tbody>
@@ -34,8 +35,17 @@
 			  	<tr>
 					<td align="center">
 						<p>Select User : </p>
-						<select>
-							<option></option>
+						<select name = "usnam" >
+								<option value=""></option>
+								<?php
+								foreach ($val as $row) {
+								?>
+								<option>
+								<?php
+								echo $row['username'];
+								?>
+								</option>
+								<?php  }?>	
 						</select>
 			  		</td>
 			  	</tr>

@@ -49,6 +49,14 @@ class db{
 			$stmt->execute($data);
 		}	
 
+		function select($tablename){
+			$val=[];
+			$querytable = "Select * from $tablename";
+			$stmt = $this->db->prepare($querytable);
+			$stmt->execute($val);
+			$val = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			return $val;
+		}
 	}
 
 ?>
