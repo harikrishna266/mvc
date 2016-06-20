@@ -19,6 +19,7 @@
 							$err = 'success';
 						}
 				}
+				$user = $this->user();
 				require('./views/userpage/userpage.php') ; 
 	   	}
 
@@ -27,6 +28,13 @@
 	   		$loginArray = array('startwork'=>$postData["basicexample1"],'stopwork'=>$postData["basicexample2"],'comment'=>$postData["comment"]);
 	   		$data = $this->insert('userpage',$loginArray);
 	   		return $data;
+		}
+
+		function user() {
+			
+			$loginArray = array('username');
+			$user = $this->selectByArgument('usertable',$loginArray);
+			return $user;
 		}
 	}	 	
 ?>

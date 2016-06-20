@@ -43,6 +43,7 @@
 		<script type="text/javascript" src="../scripts/script.js"></script>
 	</form>
 <br><br>
+<p align="center"><u>USER DETAIL ENTRY HISTORY</u></p>
 	<table align="center" border="2" bgcolor="#00CC99">
 			<tbody>
 			  	<tr>
@@ -53,11 +54,20 @@
 						<p>END DATE & TIME
 					</td>
 			  	</tr>
-				<tr>
-					<td align="center">  
-					
-					</td>
-				</tr>
+				
+					 
+					<?php 
+					foreach ($user as $row) {?>
+						<tr>
+						<td align="center"> 
+						<?php echo $row["startwork"];?>
+						</td>
+						<td>  
+						<?php echo $row["stopwork"]; ?>
+						</td>
+						</tr>	
+						<?php }
+						?>
 			</tbody>
 		</table> 
 	</body> 
