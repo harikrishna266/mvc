@@ -8,6 +8,7 @@ class adminController extends db {
 	}
 
 	function view() {
+		$session = getSession();
 		$err='';
 		 if($_POST){
 			$data=$this->submit(); 

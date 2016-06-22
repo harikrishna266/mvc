@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 spl_autoload_register(function ($class_name) {
     if($class_name === "db") 
     	require_once('./db/'.$class_name.".php");
@@ -20,6 +20,14 @@ function getGetData() {
 		return $get;
 }
 
+
+function getSession(){
+	$session =  (isset($_SESSION))?$_SESSION: false;
+	if($session)
+		return $_SESSION;
+	else
+		header('location:../login/view');
+}
 class bootstrap {
 	function __construct() {
 		$querystring = $_SERVER['REDIRECT_QUERY_STRING'];
