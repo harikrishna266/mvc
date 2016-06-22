@@ -14,7 +14,7 @@
 	<body>
 	<p><b><?php echo $err; ?></b></p>
 		<div class="wrapper" align="center">
-		<p align="right"><a href='../users/view'>logout</a></p>
+		<p align="right"><a href='../users/logout'>logout</a></p>
 			<form method="post" action="../userpage/view">
 			<div class="example-container">
 				<p><b>Start date and time</b></p>

@@ -16,6 +16,8 @@
 					if(!$data) {
 						$error = 'Invalid credentials';  			
 						} else {
+							
+							$_SESSION['user'] = $data;
 							$error = 'success';
 							header('location:../admin/view');
 						}
@@ -30,5 +32,9 @@
 	   		return $data;
 
 		}
+		function logout() {
+			session_destroy();
+			header('location:./view');
+	}
 	}	 	
 ?>

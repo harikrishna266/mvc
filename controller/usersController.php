@@ -12,6 +12,7 @@ class usersController extends db {
 						$error = 'Invalid credentials';  			
 						} else {
 							//$error = 'success';
+							$_SESSION['user'] = $data;
 							header('location:../userpage/view');
 						}
 					}
@@ -23,5 +24,10 @@ class usersController extends db {
 	   	$userArray = array('username'=>$postData["usname"],'password'=>$postData["uspass"]);
 	   	$data=$this->selectByArgument('usertable',$userArray);
 	   	return $data;
+	}
+
+	function logout() {
+		session_destroy();
+		header('location:./view');
 	}
 }

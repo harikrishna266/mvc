@@ -7,6 +7,7 @@
 <p align="center">Welcome to admin page!!</p>
 <form action="../admin/view" method="post">
 <p align="center"><?php echo $err;?></p>
+<p align="right"><a href='../login/logout'>logout</a></p>
 <div align="center">
 <table border="2" bgcolor="#00CC99">
 			<tbody>
@@ -51,7 +52,11 @@
 			  	</tr>
 				<tr>
 					<td align="center">  
-						<p>Total time : <input type="password" name="totaltime" style="border-width:thick"></p>
+						<p>Total time : <input type="text" name="totaltime" style="border-width:thick"></p>
+					</td>
+					 <tr>
+					<td align="center">
+				 		 <p>&nbsp;&nbsp;&nbsp;<input type="submit" value="Submit" name="sbmt">&nbsp;</p>
 					</td>
 				</tr>
 					</tbody></table>
